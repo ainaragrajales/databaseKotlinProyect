@@ -19,7 +19,7 @@ abstract class BDLibros:RoomDatabase() {
                 val instance= Room.databaseBuilder(
                     context.applicationContext,
                     BDLibros::class.java,
-                    "libros_database"
+                    "mislibros_database"
                 ).build()
                 INSTANCE=instance
                 instance

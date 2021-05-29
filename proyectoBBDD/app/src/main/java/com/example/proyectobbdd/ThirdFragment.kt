@@ -2,11 +2,8 @@ package com.example.proyectobbdd
 
 import android.os.Bundle
 import android.view.*
+import android.widget.*
 import androidx.fragment.app.Fragment
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 
@@ -19,6 +16,7 @@ class ThirdFragment : Fragment() {
     lateinit var etFPublicacion: EditText
     lateinit var miLibro: Libro
     lateinit var etImagen: EditText
+    lateinit var etLeido: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +42,7 @@ class ThirdFragment : Fragment() {
         etGenero=view.findViewById<EditText>(R.id.frag3_etGenero)
         etFPublicacion=view.findViewById<EditText>(R.id.frag3_etFecha)
         etImagen=view.findViewById(R.id.frag3_etImagen)
+        etLeido=view.findViewById(R.id.frag3_etLeido)
         val tvId=view.findViewById<TextView>(R.id.frag3_tvId)
 
 
@@ -68,15 +67,16 @@ class ThirdFragment : Fragment() {
                     etGenero.setText(libro.genero)
                     etFPublicacion.setText(libro.fechaPublicacion)
                     etImagen.setText(libro.urlImagen)
+                    etLeido.setText(libro.leido)
                 }
             }
         }
 
         bInsertar.setOnClickListener {
-            if(etTitulo.text.isEmpty() || etAutor.text.isEmpty() ||etGenero.text.isEmpty() || etFPublicacion.text.isEmpty() || etImagen.text.isEmpty())
+            if(etTitulo.text.isEmpty() || etAutor.text.isEmpty() ||etGenero.text.isEmpty() || etFPublicacion.text.isEmpty() || etImagen.text.isEmpty() || etLeido.text.isEmpty())
                 Toast.makeText(activity,"Tienes que insertar todos los datos", Toast.LENGTH_SHORT).show()
             else{
-                (activity as MainActivity).miViewModel.insertar(Libro(titulo=etTitulo.text.toString(),autor =  etAutor.text.toString(),genero =  etGenero.text.toString(),fechaPublicacion =  etFPublicacion.text.toString(), urlImagen = etImagen.text.toString()))
+                (activity as MainActivity).miViewModel.insertar(Libro(titulo=etTitulo.text.toString(),autor =  etAutor.text.toString(),genero =  etGenero.text.toString(),fechaPublicacion =  etFPublicacion.text.toString(), urlImagen = etImagen.text.toString(), leido = etLeido.text.toString()))
                 findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
             }
         }
@@ -87,11 +87,11 @@ class ThirdFragment : Fragment() {
         }
 
         bModificar.setOnClickListener {
-            if(miLibro.titulo==etTitulo.text.toString() && miLibro.autor==etAutor.text.toString() && miLibro.genero==etGenero.text.toString()&& miLibro.fechaPublicacion==etFPublicacion.text.toString() && miLibro.urlImagen==etImagen.text.toString()){
+            if(miLibro.titulo==etTitulo.text.toString() && miLibro.autor==etAutor.text.toString() && miLibro.genero==etGenero.text.toString()&& miLibro.fechaPublicacion==etFPublicacion.text.toString() && miLibro.urlImagen==etImagen.text.toString()&& miLibro.leido==etLeido.text.toString()){
                 Toast.makeText(activity,"No has modificado nada", Toast.LENGTH_SHORT).show()
             }
             else{
-                (activity as MainActivity).miViewModel.actualizar(Libro(posicion, etTitulo.text.toString(),etAutor.text.toString(),etGenero.text.toString(),etFPublicacion.text.toString(),etImagen.text.toString()))
+                (activity as MainActivity).miViewModel.actualizar(Libro(posicion, etTitulo.text.toString(),etAutor.text.toString(),etGenero.text.toString(),etFPublicacion.text.toString(),etImagen.text.toString(),etLeido.text.toString()))
                 findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             }
         }
@@ -111,19 +111,19 @@ class ThirdFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.guardar->{
-                if(etTitulo.text.isEmpty() || etAutor.text.isEmpty() || etGenero.text.isEmpty()||etFPublicacion.text.isEmpty()|| etImagen.text.isEmpty())
+                if(etTitulo.text.isEmpty() || etAutor.text.isEmpty() || etGenero.text.isEmpty()||etFPublicacion.text.isEmpty()|| etImagen.text.isEmpty()|| etLeido.text.isEmpty())
                     Toast.makeText(activity,"Tienes que insertar todos los datos", Toast.LENGTH_SHORT).show()
                 else{
-                    (activity as MainActivity).miViewModel.insertar(Libro(titulo= etTitulo.text.toString(),autor =  etAutor.text.toString(),genero =  etGenero.text.toString(),fechaPublicacion =  etFPublicacion.text.toString(), urlImagen = etImagen.text.toString()))
+                    (activity as MainActivity).miViewModel.insertar(Libro(titulo= etTitulo.text.toString(),autor =  etAutor.text.toString(),genero =  etGenero.text.toString(),fechaPublicacion =  etFPublicacion.text.toString(), urlImagen = etImagen.text.toString(), leido = etLeido.text.toString()))
                     findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
                 }
             }
             R.id.modificar->{
-                if(miLibro.titulo==etTitulo.text.toString() && miLibro.autor == etAutor.text.toString() && miLibro.genero == etGenero.text.toString()&& miLibro.fechaPublicacion == etFPublicacion.text.toString() && miLibro.urlImagen==etImagen.text.toString()){
+                if(miLibro.titulo==etTitulo.text.toString() && miLibro.autor == etAutor.text.toString() && miLibro.genero == etGenero.text.toString()&& miLibro.fechaPublicacion == etFPublicacion.text.toString() && miLibro.urlImagen==etImagen.text.toString()&& miLibro.leido==etLeido.text.toString()){
                     Toast.makeText(activity,"No has modificado nada", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    (activity as MainActivity).miViewModel.actualizar(Libro(posicion, etTitulo.text.toString(),etAutor.text.toString(),etGenero.text.toString(),etFPublicacion.text.toString(),etImagen.text.toString()))
+                    (activity as MainActivity).miViewModel.actualizar(Libro(posicion, etTitulo.text.toString(),etAutor.text.toString(),etGenero.text.toString(),etFPublicacion.text.toString(),etImagen.text.toString(),etLeido.text.toString()))
                     findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
                 }
             }

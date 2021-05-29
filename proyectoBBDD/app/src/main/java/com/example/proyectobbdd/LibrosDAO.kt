@@ -5,16 +5,16 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface LibrosDAO {
-    @Query("SELECT * FROM tabla_libros ORDER BY id ASC")
+    @Query("SELECT * FROM tabla_mislibros ORDER BY id ASC")
     fun mostrarTodos(): Flow<MutableList<Libro>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertar(miLibro: Libro)
 
-    @Query ("DELETE FROM tabla_libros")
+    @Query ("DELETE FROM tabla_mislibros")
     suspend fun borrarTodo()
 
-    @Query ("SELECT * FROM tabla_libros WHERE id LIKE :id")
+    @Query ("SELECT * FROM tabla_mislibros WHERE id LIKE :id")
     fun buscarPorId(id: Int):Flow<Libro>
 
     @Update
@@ -23,6 +23,6 @@ interface LibrosDAO {
     @Delete
     suspend fun borrar(miLibro: Libro)
 
-    @Query("DELETE FROM tabla_libros WHERE id LIKE :id")
+    @Query("DELETE FROM tabla_mislibros WHERE id LIKE :id")
     suspend fun borrarPorId(id:Int)
 }

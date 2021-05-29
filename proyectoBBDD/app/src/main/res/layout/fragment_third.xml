@@ -29,7 +29,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="titulo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +50,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="autor"
         app:layout_constraintStart_toStartOf="@+id/frag3_etTitulo"
         app:layout_constraintTop_toBottomOf="@+id/frag3_etTitulo" />
 
@@ -73,7 +71,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="genero"
         app:layout_constraintStart_toStartOf="@+id/frag3_etAutor"
         app:layout_constraintTop_toBottomOf="@+id/frag3_etAutor" />
 
@@ -95,33 +92,52 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Fecha publicacion"
         app:layout_constraintStart_toStartOf="@+id/frag3_etGenero"
         app:layout_constraintTop_toBottomOf="@+id/frag3_etGenero" />
-
-    <Button
-        android:id="@+id/frag3_bInsertar"
+    <TextView
+        android:id="@+id/frag3_tvLeido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="94dp"
-        android:text="insertar"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        android:text="Leído"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_tvFecha" />
+
+    <EditText
+        android:id="@+id/frag3_etLeido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="@+id/frag3_etFecha"
         app:layout_constraintTop_toBottomOf="@+id/frag3_etFecha" />
 
     <Button
+        android:id="@+id/frag3_bInsertar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="94dp"
+        android:text="insertar"
+        app:layout_constraintStart_toStartOf="@+id/frag3_etLeido"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_etLeido" />
+
+    <Button
         android:id="@+id/frag3_bModificar"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="20dp"
         android:text="modificar"
         app:layout_constraintStart_toStartOf="@+id/frag3_bBorrar"
         app:layout_constraintTop_toBottomOf="@+id/frag3_bBorrar" />
 
     <Button
         android:id="@+id/frag3_bBorrar"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
         android:text="borrar"
@@ -136,7 +152,7 @@
         android:layout_marginTop="38dp"
         android:text="url_imagen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frag3_tvFecha" />
+        app:layout_constraintTop_toBottomOf="@+id/frag3_tvLeido" />
 
     <EditText
         android:id="@+id/frag3_etImagen"
@@ -145,11 +161,11 @@
         android:layout_marginStart="3dp"
         android:layout_marginTop="13dp"
         android:ems="10"
+        android:text="https://image.freepik.com/vector-gratis/libro-blanco-sobre-fondo-blanco_1308-23052.jpg"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="url_imagen"
-        app:layout_constraintStart_toStartOf="@+id/frag3_etFecha"
-        app:layout_constraintTop_toBottomOf="@+id/frag3_etFecha" />
+        app:layout_constraintStart_toStartOf="@+id/frag3_etLeido"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_etLeido" />
 
     <TextView
         android:id="@+id/frag3_tvId"

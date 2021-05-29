@@ -4,6 +4,7 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.os.bundleOf
@@ -19,6 +20,7 @@ class Adaptador(var listaLibros:MutableList<Libro>, val actividad: Activity):Rec
         var tvGenero:TextView=v.findViewById(R.id.item_tvGenero)
         var tvFPublicacion:TextView=v.findViewById(R.id.item_tvFPublicacion)
         var urlImagen: ImageView =v.findViewById(R.id.item_imagen)
+        var tvleido: TextView = v.findViewById(R.id.item_tvLeido)
         var posicion:Int=0
         init{
             v.setOnClickListener {
@@ -40,6 +42,7 @@ class Adaptador(var listaLibros:MutableList<Libro>, val actividad: Activity):Rec
         holder.tvGenero.text=listaLibros[position].genero
         holder.tvFPublicacion.text=listaLibros[position].fechaPublicacion
         Glide.with(actividad).load(listaLibros[position].urlImagen).into(holder.urlImagen)
+        holder.tvleido.text=listaLibros[position].leido
         holder.posicion=listaLibros[position].id
     }
 

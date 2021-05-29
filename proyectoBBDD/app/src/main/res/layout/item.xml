@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/item_imagen"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/item_tvId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_imagen"
+        android:layout_alignParentStart="true"
+        android:background="@color/black_transparent"
+        android:textColor="@color/teal_200"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/item_tvAutor"
+        app:layout_constraintEnd_toStartOf="@+id/item_tvTitulo"
+        app:layout_constraintStart_toEndOf="@+id/item_imagen"
+        app:layout_constraintTop_toBottomOf="@+id/item_tvAutor" />
+
+    <TextView
+        android:id="@+id/item_tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_imagen"
+        android:layout_alignParentStart="true"
+        android:background="@color/black_transparent"
+        android:textColor="@color/teal_200"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/item_tvAutor"
+        app:layout_constraintEnd_toStartOf="@+id/item_tvAutor"
+        app:layout_constraintStart_toEndOf="@+id/item_tvId"
+        app:layout_constraintTop_toBottomOf="@+id/item_tvAutor" />
+
+    <TextView
+        android:id="@+id/item_tvAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_imagen"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/item_tvGenero"
+        app:layout_constraintEnd_toStartOf="@+id/item_tvGenero"
+        app:layout_constraintStart_toEndOf="@+id/item_tvTitulo" />
+
+    <TextView
+        android:id="@+id/item_tvGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_imagen"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/item_tvFPublicacion"
+        app:layout_constraintStart_toEndOf="@+id/item_tvAutor"
+        app:layout_constraintTop_toTopOf="@+id/item_imagen" />
+
+    <TextView
+        android:id="@+id/item_tvFPublicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_imagen"
+        android:layout_margin="5dp"
+        android:layout_marginEnd="411dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/item_tvAutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_tvGenero" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

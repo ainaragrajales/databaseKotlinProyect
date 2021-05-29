@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThirdFragment">
+
+
+    <TextView
+        android:id="@+id/frag3_tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="23dp"
+        android:text="titulo"
+        app:layout_constraintBottom_toTopOf="@+id/frag3_etAutor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frag3_etTitulo" />
+
+    <EditText
+        android:id="@+id/frag3_etTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/frag3_tvAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="49dp"
+        android:text="autor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_tvTitulo" />
+
+    <EditText
+        android:id="@+id/frag3_etAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="autor"
+        app:layout_constraintStart_toStartOf="@+id/frag3_etTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_etTitulo" />
+
+    <TextView
+        android:id="@+id/frag3_tvGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:text="genero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_tvAutor" />
+
+    <EditText
+        android:id="@+id/frag3_etGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="genero"
+        app:layout_constraintStart_toStartOf="@+id/frag3_etAutor"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_etAutor" />
+
+    <TextView
+        android:id="@+id/frag3_tvFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        android:text="Fecha publicacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_tvGenero" />
+
+    <EditText
+        android:id="@+id/frag3_etFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Fecha publicacion"
+        app:layout_constraintStart_toStartOf="@+id/frag3_etGenero"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_etGenero" />
+
+    <Button
+        android:id="@+id/frag3_bInsertar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="94dp"
+        android:text="insertar"
+        app:layout_constraintStart_toStartOf="@+id/frag3_etFecha"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_etFecha" />
+
+    <Button
+        android:id="@+id/frag3_bModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="43dp"
+        android:text="modificar"
+        app:layout_constraintStart_toStartOf="@+id/frag3_bBorrar"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_bBorrar" />
+
+    <Button
+        android:id="@+id/frag3_bBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="borrar"
+        app:layout_constraintStart_toStartOf="@+id/frag3_bInsertar"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_bInsertar" />
+
+    <TextView
+        android:id="@+id/frag3_tvImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="38dp"
+        android:text="url_imagen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_tvFecha" />
+
+    <EditText
+        android:id="@+id/frag3_etImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="url_imagen"
+        app:layout_constraintStart_toStartOf="@+id/frag3_etFecha"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_etFecha" />
+
+    <TextView
+        android:id="@+id/frag3_tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="51dp"
+        android:text="id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
